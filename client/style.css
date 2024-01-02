@@ -19,6 +19,15 @@ body{
     font-family: monospace;
     font-size: 22px;
 }
+  
+#quiz-container {
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height:100vh;
+}
+  
  h1 {
 font-family: 'Gillalo', sans-serif;
 color: white;
@@ -48,5 +57,3 @@ display:
     border: initial;
 }
   
-
-
