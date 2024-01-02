@@ -1,5 +1,10 @@
 *{
     text-align:center;
+    box-sizing: border-box;
+}
+img{
+    width: 30%;
+    border: solid black 3px;
 }
 video {
     width:30%;
