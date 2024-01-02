@@ -11,7 +11,7 @@ video {
 }
 ul {
     list-style:none;
-    
+}    
 
 body{
     background-color: black;
@@ -36,7 +36,7 @@ font-size: 6em;
  }
 
  options {
-    display:;
+    display: flex;
     flex-direction: column;
     display:inline;
     position:relative;
@@ -47,8 +47,7 @@ font-size: 6em;
 }
 
 li.option {
-
-display:
+    display:flex;
     align-items: center;
     cursor: pointer;
     appearance: auto;
