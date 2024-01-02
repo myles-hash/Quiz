@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./CLIPS/Film.ico">
-    <script src="app.js" defer></script>
+    <link rel="icon" href="./CLIPS/Film.ico" />
+    <script src="app.js" defer type="module"></script>
   </head>
   <body>
-    <h1>QUIZ</h1>
+    <!-- <h1>QUIZ</h1>
     <div id="quiz-container">
       <div class="question">
         <p>1. Which of the following is filmmaker Michael Bay known for?</p>
@@ -198,6 +198,29 @@
 
       </div>
       <button id="submit-btn">Submit Answers</button>
+    </div> -->
+
+    <div id="quiz-container">
+      <h2 id="question"></h2>
+      <form id="quiz-form">
+        <label
+          ><input type="radio" name="answer" id="answer1" />
+          <span id="label1"></span></label
+        ><br />
+        <label
+          ><input type="radio" name="answer" id="answer2" />
+          <span id="label2"></span></label
+        ><br />
+        <label
+          ><input type="radio" name="answer" id="answer3" />
+          <span id="label3"></span></label
+        ><br />
+        <label
+          ><input type="radio" name="answer" id="answer4" />
+          <span id="label4"></span></label
+        ><br />
+        <button type="button" onclick="loadQuiz()">Next Question</button>
+      </form>
     </div>
   </body>
 </html>
