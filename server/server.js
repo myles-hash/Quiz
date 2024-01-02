@@ -9,6 +9,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/quiz", (request, response) => {
+  let qAndAs = [];
+
+  qAndAs = db.prepare("SELECT * FROM quiztable").all();
+
+  response.json(qAndAs);
+});
+
 app.get("/",(request,response) => {
     response.json('Looking at root route!')
 });

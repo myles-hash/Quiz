@@ -5,14 +5,14 @@ db.exec(`
 CREATE TABLE IF NOT EXISTS quiztable (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     question TEXT,
-    answerone TEXT,
-    answertwo TEXT,
-    answerthree TEXT,
-    answerfour TEXT
+    answer1 TEXT,
+    answer2 TEXT,
+    answer3 TEXT,
+    answer4 TEXT
 )
 `);
 
-db.prepare(`INSERT INTO quiztable (question, answerone, answertwo, answerthree, answerfour) VALUES (?, ?, ?, ?, ?)`).run(
+db.prepare(`INSERT INTO quiztable (question, answer1, answer2, answer3, answer4) VALUES (?, ?, ?, ?, ?)`).run(
     "Will this quiz be good?",
     "Yep",
     "Yes",
