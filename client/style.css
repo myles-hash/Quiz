@@ -11,4 +11,42 @@ video {
 }
 ul {
     list-style:none;
+    
+
+body{
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: 22px;
 }
+ h1 {
+font-family: 'Gillalo', sans-serif;
+color: white;
+background-color: black;
+font-size: 6em;
+ }
+
+ options {
+    display:;
+    flex-direction: column;
+    display:inline;
+    position:relative;
+    cursor:pointer;
+    font-size: 18px;
+
+
+}
+
+li.option {
+
+display:
+    align-items: center;
+    cursor: pointer;
+    appearance: auto;
+    box-sizing: border-box;
+    padding: initial;
+    border: initial;
+}
+  
+
+
