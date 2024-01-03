@@ -2,6 +2,18 @@
     text-align:center;
     box-sizing: border-box;
 }
+#cover{
+    width:97vw;
+    height:97vh;
+    border:1rem white double;
+    background:radial-gradient(circle, white 0%, black 100%);
+    z-index: 1;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;}
 img{
     width: 30%;
     border: solid black 3px;
