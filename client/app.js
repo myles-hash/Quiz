@@ -5,9 +5,12 @@ let currentQuestionIndex = 0;
 
 const cover = document.getElementById("cover")
 quizContainer.style.display = "none";
+const countdownVideo = document.querySelector('.countdown-video');
 document.getElementById("letsGo").onclick = function () {
   quizContainer.style.display = "initial";
-  cover.style.display = "none";}
+  cover.style.display = "none";
+  countdownVideo.style.display = "none";
+};
 
 async function getQuiz() {
   const response = await fetch("http://localhost:8080/quiz");
