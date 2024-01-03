@@ -1,5 +1,7 @@
 const form = document.getElementById("quiz-form");
 const quizContainer = document.getElementById("quiz-container");
+let score = 0;
+let currentQuestionIndex = 0;
 
 const cover = document.getElementById("cover")
 quizContainer.style.display = "none";
@@ -8,9 +10,6 @@ document.getElementById("letsGo").onclick = function () {
   cover.style.display = "none";}
 
 async function getQuiz() {
-
-
-
   const response = await fetch("http://localhost:8080/quiz");
   const qAndAs = await response.json();
 
@@ -31,21 +30,36 @@ async function getQuiz() {
     const question = document.createElement("h2");
     question.textContent = qAndA.question;
 
-    const answer1 = document.createElement("label");
-    answer1.innerHTML = `<input type="radio" name="answer" value="${qAndA.answer1}" /> <span>${qAndA.answer1}</span>`;
-
-    const answer2 = document.createElement("label");
-    answer2.innerHTML = `<input type="radio" name="answer" value="${qAndA.answer2}" /> <span>${qAndA.answer2}</span>`;
-
-    const answer3 = document.createElement("label");
-    answer3.innerHTML = `<input type="radio" name="answer" value="${qAndA.answer3}" /> <span>${qAndA.answer3}</span>`;
-
-    const answer4 = document.createElement("label");
-    answer4.innerHTML = `<input type="radio" name="answer" value="${qAndA.answer4}" /> <span>${qAndA.answer4}</span>`;
+    const answer1 = createRadioButton(qAndA.answer1, `answer_${index}`);
+    const answer2 = createRadioButton(qAndA.answer2, `answer_${index}`);
+    const answer3 = createRadioButton(qAndA.answer3, `answer_${index}`);
+    const answer4 = createRadioButton(qAndA.answer4, `answer_${index}`);
 
     const nextButton = document.createElement("button");
-    nextButton.textContent = "Next Question";
+  nextButton.textContent = index === qAndAs.length - 1 ? "Submit Quiz" : "Next Question";
+
+
     nextButton.addEventListener("click", () => {
+      const selectedAnswer = document.querySelector(`input[name="answer_${index}"]:checked`);
+
+    if (selectedAnswer) {
+      if (selectedAnswer.value === qAndA.correctAnswer) {
+        score++; 
+      }
+
+      if (index === qAndAs.length - 1) {
+        alert(`Your score is ${score} out of ${qAndAs.length}`);
+      } else {
+        currentQuestionIndex++;
+        
+      }
+    } else {
+      alert("Please select an answer before moving to the next question."); 
+      return;
+    }
+
+    const nextQuestionContainer = document.querySelectorAll(".questionContainerClass")[currentQuestionIndex];
+    nextQuestionContainer.scrollIntoView({ behavior: "smooth" });
     });
 
 
@@ -60,6 +74,12 @@ async function getQuiz() {
     quizContainer.appendChild(questionContainer);
   });
 
+}
+
+function createRadioButton(answerText, groupName) {
+  const label = document.createElement("label");
+  label.innerHTML = `<input type="radio" name="${groupName}" value="${answerText}" /> <span>${answerText}</span>`;
+  return label;
 }
 
 getQuiz();
