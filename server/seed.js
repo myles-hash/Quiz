@@ -1,6 +1,6 @@
 import Database from "better-sqlite3";
 const db = new Database("database.db");
-//db.exec(`DROP TABLE quiztable;`) // delete table dev tool
+
 db.exec(`
 CREATE TABLE IF NOT EXISTS quiztable (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -83,3 +83,45 @@ CREATE TABLE IF NOT EXISTS quiztable (
     "./CLIPS/7)stalker.jpg",
     "A room that grants your sincerest wish"
   );
+
+db.exec(`CREATE TABLE IF NOT EXISTS result_table (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  score_threshold INTEGER,
+  message TEXT,
+  message2 TEXT,
+  image_path TEXT
+)
+`);
+
+db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+  0,
+  "Terrible!",
+  "You should be ashamed of youself. Take a good hard look in the mirror >:(",
+  "./CLIPS/4)krull.jpg"
+);
+
+  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+    3,
+    "You can do better!",
+    "Should be doing better than that ;(",
+    "./CLIPS/4)krull.jpg"
+  );
+
+  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+    5,
+    "Good job!",
+    "Pretty good, now go for perfect!",
+    "./CLIPS/4)krull.jpg"
+  );
+
+  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+    7,
+    "Perfect score!",
+    "You are a Movie Star! Do whatever you want, they can!",
+    "./CLIPS/4)krull.jpg"
+  );
+
+
+
+
+
