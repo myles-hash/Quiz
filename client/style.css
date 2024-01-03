@@ -3,17 +3,61 @@
     box-sizing: border-box;
 }
 #cover{
-    width:97vw;
-    height:97vh;
+    width:100vw;
+    height:100vh;
     border:1rem white double;
-    background:radial-gradient(circle, white 0%, black 100%);
     z-index: 1;
     position:absolute;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;}
+    color: black;
+}
+#cover p {
+    color: white;
+    margin: 0;
+    padding: 1rem;
+    background-color: black;
+}
+
+#cover h1 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 3rem;
+}
+
+#cover button {
+    margin-top: 34vh;
+    padding:1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 4s forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+.video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .countdown-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 0;
+        overflow: hidden;
+    }
+
 img{
     width: 30%;
     border: solid black 3px;
@@ -74,4 +118,24 @@ li.option {
     box-sizing: border-box;
     padding: initial;
     border: initial;
+}
+
+.curtain {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #711324; /* Set the color of your curtains */
+    animation: undrawCurtains 4s forwards; /* Adjust the duration as needed */
+}
+
+@keyframes undrawCurtains {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height: 0;
+    }
 }
