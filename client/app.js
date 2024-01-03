@@ -12,8 +12,15 @@ async function getQuiz() {
     const questionContainer = document.createElement("div");
     questionContainer.className = "questionContainerClass";
 
-    const image = document.createElement("img");
-    image.src = `${qAndA.image}`;
+    const mediaElement = qAndA.image.endsWith(".mp4")
+    ? document.createElement("video")
+    : document.createElement("img");
+
+    mediaElement.src = `${qAndA.image}`;
+
+    if (qAndA.image.endsWith(".mp4")) {
+      mediaElement.controls = true;
+    }
 
     const question = document.createElement("h2");
     question.textContent = qAndA.question;
@@ -37,7 +44,7 @@ async function getQuiz() {
 
 
     questionContainer.appendChild(question);
-    questionContainer.appendChild(image);
+    questionContainer.appendChild(mediaElement);
     questionContainer.appendChild(answer1);
     questionContainer.appendChild(answer2);
     questionContainer.appendChild(answer3);
