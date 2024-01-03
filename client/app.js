@@ -1,6 +1,12 @@
 const form = document.getElementById("quiz-form");
 const quizContainer = document.getElementById("quiz-container");
 
+const cover = document.getElementById("cover")
+quizContainer.style.display = "none";
+document.getElementById("letsGo").onclick = function () {
+  quizContainer.style.display = "initial";
+  cover.style.display = "none";}
+
 async function getQuiz() {
 
 
