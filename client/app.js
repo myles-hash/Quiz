@@ -11,22 +11,21 @@ async function playResSound(audioPath) {
   audio.play();
 }
 
-window.onload = function() {
-  playOnLoad('./CLIPS/20thTrim.mp3');
-};
 
-function playOnLoad(audioPath) {
+async function playOnLoad(audioPath) {
   const audio = new Audio(audioPath);
-  audio.volume = 0.1;
+  audio.volume = 0.5;
   audio.play()
 };
 
 window.onload=()=>{ if (sessionStorage.getItem("reset")===null){
     quizContainer.style.display = "none";
     cover.style.display= "initial";
+    playOnLoad('./CLIPS/20thTrim.mp3');  
   }else{quizContainer.style.display="initial";
     cover.style.display="none";
-    sessionStorage.clear();}}
+    sessionStorage.clear();
+  }}
 
 const drop = document.getElementById("drop")
 drop.style.display = "none";
