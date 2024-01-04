@@ -12,10 +12,10 @@ async function playResSound(audioPath) {
 }
 
 
-async function playOnLoad(audioPath) {
+ function playOnLoad(audioPath) {
   const audio = new Audio(audioPath);
   audio.volume = 0.2;
-  audio.play()
+  audio.play();
 };
 
 window.onload=()=>{ if (sessionStorage.getItem("reset")===null){
@@ -38,12 +38,6 @@ document.getElementById("letsGo").onclick = async function () {
     },3000);
 }
 
-//const countdownVideo = document.querySelector('.countdown-video');//
-//document.getElementById("letsGo").onclick = async function () {
-//  quizContainer.style.display = "initial";
-//  cover.style.display = "none";
-//  countdownVideo.style.display = "none"
-//};
 
 async function getQuiz() {
   const response = await fetch("http://localhost:8080/quiz");
