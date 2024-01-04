@@ -17,6 +17,13 @@ app.get("/quiz", (request, response) => {
   response.json(qAndAs);
 });
 
+app.get("/results", (request, response) => {
+  const userScore = request.query.score || 0;
+  const result = db.prepare("SELECT * FROM result_table WHERE score_threshold <= ? ORDER BY score_threshold DESC LIMIT 1").get(userScore);
+
+  response.json(result);
+});
+
 app.get("/",(request,response) => {
     response.json('Looking at root route!')
 });
