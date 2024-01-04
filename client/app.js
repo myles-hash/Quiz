@@ -3,9 +3,14 @@ const quizContainer = document.getElementById("quiz-container");
 let score = 0;
 let currentQuestionIndex = 0;
 let qAndAs;
-
 const cover = document.getElementById("cover")
-quizContainer.style.display = "none";
+
+
+window.onload=()=>{ if (sessionStorage.getItem("reset")===null){
+  quizContainer.style.display = "none";
+  cover.style.display= "initial";
+}else{quizContainer.style.display="initial";
+  cover.style.display="none";}}
 
 const drop = document.getElementById("drop")
 drop.style.display = "none";
@@ -121,6 +126,7 @@ async function displayResult(result) {
   playResSound(result.audio_path);
   const resetBtn = document.getElementById("resetBtn");
 resetBtn.addEventListener("click", async() =>{
+  sessionStorage.setItem("reset","true");
   location.reload();
 })
 }
