@@ -14,7 +14,7 @@ async function playResSound(audioPath) {
 
 async function playOnLoad(audioPath) {
   const audio = new Audio(audioPath);
-  audio.volume = 0.5;
+  audio.volume = 0.2;
   audio.play()
 };
 
@@ -31,6 +31,7 @@ const drop = document.getElementById("drop")
 drop.style.display = "none";
 document.getElementById("letsGo").onclick = async function () {
   drop.style.display = "initial";
+  playOnLoad('./CLIPS/BeepTrim.mp3');
   setTimeout(function(){ 
     quizContainer.style.display = "initial";
     cover.style.display = "none";
