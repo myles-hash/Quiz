@@ -95,30 +95,30 @@ db.exec(`CREATE TABLE IF NOT EXISTS result_table (
 
 db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
   0,
-  "Terrible!",
-  "You should be ashamed of youself. Take a good hard look in the mirror >:(",
-  "./CLIPS/4)krull.jpg"
+  "You are Kevin Spacey",
+  "You should be ashamed of youself. Take a good hard look in the mirror and try again >:(",
+  "./CLIPS/Spacey.jpeg"
 );
 
   db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
     3,
-    "You can do better!",
-    "Should be doing better than that ;(",
-    "./CLIPS/4)krull.jpg"
+    "You are Barry Keoghan",
+    "You're a rising star, but not quite at the top yet. Give it another go!",
+    "./CLIPS/Barry.jpeg"
   );
 
   db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
     5,
-    "Good job!",
-    "Pretty good, now go for perfect!",
-    "./CLIPS/4)krull.jpg"
+    "You are Leonardo DiCaprio",
+    "Great job, you're critically acclaimed! Now go for perfect!",
+    "./CLIPS/Leo.jpeg"
   );
 
   db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
     7,
-    "Perfect score!",
-    "You are a Movie Star! Do whatever you want, they can!",
-    "./CLIPS/4)krull.jpg"
+    "You are Denzel Washington",
+    "You are the GOAT actor, Perfect score!",
+    "./CLIPS/Denzel.jpeg"
   );
 
 
