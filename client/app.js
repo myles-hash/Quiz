@@ -6,23 +6,23 @@ let qAndAs;
 
 const cover = document.getElementById("cover")
 quizContainer.style.display = "none";
-//<<<<<<< rb9
-//const drop = document.getElementById("drop")
-//drop.style.display = "none";
-//document.getElementById("letsGo").onclick = function () {
- // drop.style.display = "initial";
-  //setTimeout(function(){ 
-   // quizContainer.style.display = "initial";
-   // cover.style.display = "none";
-   // },3000);
-  //}
-//////////////////////////////////////////////
-const countdownVideo = document.querySelector('.countdown-video');
+
+const drop = document.getElementById("drop")
+drop.style.display = "none";
 document.getElementById("letsGo").onclick = async function () {
-  quizContainer.style.display = "initial";
-  cover.style.display = "none";
-  countdownVideo.style.display = "none"
-};
+  drop.style.display = "initial";
+  setTimeout(function(){ 
+    quizContainer.style.display = "initial";
+    cover.style.display = "none";
+    },3000);
+}
+
+//const countdownVideo = document.querySelector('.countdown-video');//
+//document.getElementById("letsGo").onclick = async function () {
+//  quizContainer.style.display = "initial";
+//  cover.style.display = "none";
+//  countdownVideo.style.display = "none"
+//};
 
 async function getQuiz() {
   const response = await fetch("http://localhost:8080/quiz");
