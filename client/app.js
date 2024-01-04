@@ -3,9 +3,15 @@ const quizContainer = document.getElementById("quiz-container");
 
 const cover = document.getElementById("cover")
 quizContainer.style.display = "none";
+const drop = document.getElementById("drop")
+drop.style.display = "none";
 document.getElementById("letsGo").onclick = function () {
-  quizContainer.style.display = "initial";
-  cover.style.display = "none";}
+  drop.style.display = "initial";
+  setTimeout(function(){ 
+    quizContainer.style.display = "initial";
+    cover.style.display = "none";
+    },3000);
+  }
 
 async function getQuiz() {
 
