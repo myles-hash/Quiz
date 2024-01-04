@@ -99,7 +99,7 @@ db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_
   "You are Kevin Spacey",
   "You should be ashamed of youself. Take a good hard look in the mirror and try again >:(",
   "./CLIPS/Spacey.jpeg",
-  "./CLIPS/Eww.mp3"
+  "./CLIPS/EwTrim.mp3"
 );
 
   db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path, audio_path) VALUES (?, ?, ?, ?, ?)`).run(
