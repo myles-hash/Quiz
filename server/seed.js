@@ -89,36 +89,41 @@ db.exec(`CREATE TABLE IF NOT EXISTS result_table (
   score_threshold INTEGER,
   message TEXT,
   message2 TEXT,
-  image_path TEXT
+  image_path TEXT,
+  audio_path TEXT
 )
 `);
 
-db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path, audio_path) VALUES (?, ?, ?, ?, ?)`).run(
   0,
   "You are Kevin Spacey",
   "You should be ashamed of youself. Take a good hard look in the mirror and try again >:(",
-  "./CLIPS/Spacey.jpeg"
+  "./CLIPS/Spacey.jpeg",
+  "./CLIPS/Eww.mp3"
 );
 
-  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path, audio_path) VALUES (?, ?, ?, ?, ?)`).run(
     3,
     "You are Barry Keoghan",
     "You're a rising star, but not quite at the top yet. Give it another go!",
-    "./CLIPS/Barry.jpeg"
+    "./CLIPS/Barry.jpeg",
+    "./CLIPS/Eww.mp3"
   );
 
-  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path, audio_path) VALUES (?, ?, ?, ?, ?)`).run(
     5,
     "You are Leonardo DiCaprio",
     "Great job, you're critically acclaimed! Now go for perfect!",
-    "./CLIPS/Leo.jpeg"
+    "./CLIPS/Leo.jpeg",
+    "./CLIPS/Eww.mp3"
   );
 
-  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path) VALUES (?, ?, ?, ?)`).run(
+  db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path, audio_path) VALUES (?, ?, ?, ?, ?)`).run(
     7,
     "You are Denzel Washington",
     "You are the GOAT actor, Perfect score!",
-    "./CLIPS/Denzel.jpeg"
+    "./CLIPS/Denzel.jpeg",
+    "./CLIPS/Eww.mp3"
   );
 
 
