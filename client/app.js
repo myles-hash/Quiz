@@ -25,7 +25,8 @@ window.onload=()=>{ if (sessionStorage.getItem("reset")===null){
     quizContainer.style.display = "none";
     cover.style.display= "initial";
   }else{quizContainer.style.display="initial";
-    cover.style.display="none";}}
+    cover.style.display="none";
+    sessionStorage.clear();}}
 
 const drop = document.getElementById("drop")
 drop.style.display = "none";
