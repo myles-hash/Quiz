@@ -2,6 +2,7 @@ const form = document.getElementById("quiz-form");
 const quizContainer = document.getElementById("quiz-container");
 let score = 0;
 let currentQuestionIndex = 0;
+let qAndAs;
 
 const cover = document.getElementById("cover")
 quizContainer.style.display = "none";
@@ -110,6 +111,7 @@ async function displayResult(result) {
   document.body.innerHTML = `
       <div>
           <h1>${result.message}</h1>
+          <p>Your score is ${score} out of 7 (${score}/7)</p>
           <p>${result.message2}</p>
           <img src="${result.image_path}" alt="Result Image">
           <button id="resetBtn">Reset</button>
