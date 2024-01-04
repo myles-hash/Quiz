@@ -51,8 +51,8 @@ async function getQuiz() {
     const answer4 = createRadioButton(qAndA.answer4, `answer_${index}`);
 
     const nextButton = document.createElement("button");
-  nextButton.textContent = index === qAndAs.length - 1 ? "Submit Quiz" : "Next Question";
-
+    nextButton.textContent = index === qAndAs.length - 1 ? "Submit Quiz" : "Next Question";
+    nextButton.classList.add('nextAndSubmitBtn');
 
     nextButton.addEventListener("click", async () => {
       const selectedAnswer = document.querySelector(`input[name="answer_${index}"]:checked`);
@@ -102,6 +102,7 @@ async function getQuiz() {
 function createRadioButton(answerText, groupName) {
   const label = document.createElement("label");
   label.innerHTML = `<input type="radio" name="${groupName}" value="${answerText}" /> <span>${answerText}</span>`;
+  label.classList.add('labelClass');
   return label;
 }
 
