@@ -189,6 +189,10 @@ align-items: center;
     width: 97vw;
 }
 
+.questionContainerClass:nth-of-type(7) {
+    border-bottom: none;
+}
+
  h1 {
 font-family: 'Gillalo', sans-serif;
 color: white;
@@ -237,8 +241,32 @@ li.option {
 }
 img{
     width: 30%;
-    border: solid black 3px;
+    border: solid white 3px;
 }
 video {
     width:30%;
+}
+
+.nextAndSubmitBtn {
+    margin-top: 2rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.labelClass {
+    margin-top: 0.75rem;
+}
+
+#resetBtn {
+    display: block;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 50%;
+}
+
+h1 {
+    margin: 0;
 }
