@@ -107,7 +107,7 @@ db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_
     "You are Barry Keoghan",
     "You're a rising star, but not quite at the top yet. Give it another go!",
     "./CLIPS/Barry.jpeg",
-    "./CLIPS/Eww.mp3"
+    "./CLIPS/Alright.mp3"
   );
 
   db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path, audio_path) VALUES (?, ?, ?, ?, ?)`).run(
@@ -115,7 +115,7 @@ db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_
     "You are Leonardo DiCaprio",
     "Great job, you're critically acclaimed! Now go for perfect!",
     "./CLIPS/Leo.jpeg",
-    "./CLIPS/Eww.mp3"
+    "./CLIPS/Woo.mp3"
   );
 
   db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_path, audio_path) VALUES (?, ?, ?, ?, ?)`).run(
@@ -123,7 +123,7 @@ db.prepare(`INSERT INTO result_table (score_threshold, message, message2, image_
     "You are Denzel Washington",
     "You are the GOAT actor, Perfect score!",
     "./CLIPS/Denzel.jpeg",
-    "./CLIPS/Eww.mp3"
+    "./CLIPS/GOAT.mp3"
   );
 
 
