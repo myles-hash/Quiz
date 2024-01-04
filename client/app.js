@@ -5,12 +5,27 @@ let currentQuestionIndex = 0;
 let qAndAs;
 const cover = document.getElementById("cover")
 
+async function playResSound(audioPath) {
+  const audio = new Audio(audioPath);
+  audio.volume = 0.1;
+  audio.play();
+}
+
+window.onload = function() {
+  playOnLoad('./CLIPS/20thTrim.mp3');
+};
+
+function playOnLoad(audioPath) {
+  const audio = new Audio(audioPath);
+  audio.volume = 0.1;
+  audio.play()
+};
 
 window.onload=()=>{ if (sessionStorage.getItem("reset")===null){
-  quizContainer.style.display = "none";
-  cover.style.display= "initial";
-}else{quizContainer.style.display="initial";
-  cover.style.display="none";}}
+    quizContainer.style.display = "none";
+    cover.style.display= "initial";
+  }else{quizContainer.style.display="initial";
+    cover.style.display="none";}}
 
 const drop = document.getElementById("drop")
 drop.style.display = "none";
@@ -125,27 +140,13 @@ async function displayResult(result) {
   `;
   playResSound(result.audio_path);
   const resetBtn = document.getElementById("resetBtn");
-resetBtn.addEventListener("click", async() =>{
+resetBtn.addEventListener("click", () =>{
   sessionStorage.setItem("reset","true");
   location.reload();
 })
 }
 
-async function playResSound(audioPath) {
-  const audio = new Audio(audioPath);
-  audio.volume = 0.1;
-  audio.play();
-}
 
-window.onload = function() {
-  playOnLoad('./CLIPS/20thTrim.mp3');
-};
-
-function playOnLoad(audioPath) {
-  const audio = new Audio(audioPath);
-  audio.volume = 0.1;
-  audio.play()
-};
 
 
 
