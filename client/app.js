@@ -131,6 +131,18 @@ async function playResSound(audioPath) {
   audio.play();
 }
 
+window.onload = function() {
+  playOnLoad('./CLIPS/20thTrim.mp3');
+};
+
+function playOnLoad(audioPath) {
+  const audio = new Audio(audioPath);
+  audio.volume = 0.1;
+  audio.play()
+};
+
+
+
 
 
 
