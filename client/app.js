@@ -118,12 +118,18 @@ async function displayResult(result) {
           <button id="resetBtn">Reset</button>
       </div>
   `;
+  playResSound(result.audio_path);
   const resetBtn = document.getElementById("resetBtn");
 resetBtn.addEventListener("click", async() =>{
   location.reload();
 })
 }
 
+async function playResSound(audioPath) {
+  const audio = new Audio(audioPath);
+  audio.volume = 0.1;
+  audio.play();
+}
 
 
 
