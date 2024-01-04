@@ -21,7 +21,7 @@ async function playResSound(audioPath) {
 window.onload=()=>{ if (sessionStorage.getItem("reset")===null){
     quizContainer.style.display = "none";
     cover.style.display= "initial";
-    playOnLoad('./CLIPS/20thTrim.mp3');  
+    playOnLoad('CLIPS/20thTrim.mp3');  
   }else{quizContainer.style.display="initial";
     cover.style.display="none";
     sessionStorage.clear();
@@ -40,7 +40,7 @@ document.getElementById("letsGo").onclick = async function () {
 
 
 async function getQuiz() {
-  const response = await fetch("https://quizserver-amxk.onrender.com/quiz");
+  const response = await fetch("http://localhost:8080/quiz");
   const qAndAs = await response.json();
 
   qAndAs.forEach(function (qAndA, index) {
@@ -78,7 +78,7 @@ async function getQuiz() {
       }
       
       if (index === qAndAs.length - 1) {
-        const response = await fetch(`https://quizserver-amxk.onrender.com/results?score=${score}`);
+        const response = await fetch(`http://localhost:8080/results?score=${score}`);
         const result = await response.json();
 
         if (result) {
