@@ -51,7 +51,7 @@ async function getQuiz() {
     ? document.createElement("video")
     : document.createElement("img");
 
-    mediaElement.src = `${qAndA.image}`;
+    mediaElement.src = `./CLIPS/${qAndA.image}`;
 
     if (qAndA.image.endsWith(".mp4")) {
       mediaElement.controls = true;
