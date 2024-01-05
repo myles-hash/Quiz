@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS quiztable (
     "Noir",
     "Explosions",
     "Westerns",
-    "./CLIPS/1)Bay.jpg",
+    "../client/CLIPS/1)Bay.jpg",
     "Explosions"
   );
 

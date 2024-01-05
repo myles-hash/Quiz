@@ -20,8 +20,7 @@ async function playResSound(audioPath) {
 
 window.onload=()=>{ if (sessionStorage.getItem("reset")===null){
     quizContainer.style.display = "none";
-    cover.style.display= "initial";
-    playOnLoad('CLIPS/20thTrim.mp3');  
+    cover.style.display= "initial"; 
   }else{quizContainer.style.display="initial";
     cover.style.display="none";
     sessionStorage.clear();
@@ -42,6 +41,7 @@ document.getElementById("letsGo").onclick = async function () {
 async function getQuiz() {
   const response = await fetch("http://localhost:8080/quiz");
   const qAndAs = await response.json();
+  playOnLoad('./CLIPS/20thTrim.mp3'); 
 
   qAndAs.forEach(function (qAndA, index) {
     const questionContainer = document.createElement("div");
