@@ -8,6 +8,7 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(express.static('CLIPS'));
 
 app.get("/quiz", (request, response) => {
   let qAndAs = [];
