@@ -39,7 +39,7 @@ document.getElementById("letsGo").onclick = async function () {
 
 
 async function getQuiz() {
-  const response = await fetch("http://localhost:8080/quiz");
+  const response = await fetch("https://quizserver-5358.onrender.com/quiz");
   const qAndAs = await response.json();
   playOnLoad('./CLIPS/20thTrim.mp3'); 
 
@@ -78,7 +78,7 @@ async function getQuiz() {
       }
       
       if (index === qAndAs.length - 1) {
-        const response = await fetch(`http://localhost:8080/results?score=${score}`);
+        const response = await fetch(`https://quizserver-5358.onrender.com/results?score=${score}`);
         const result = await response.json();
 
         if (result) {
